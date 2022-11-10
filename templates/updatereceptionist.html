@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<br>
+<u><h3 style="font-family:verdana;font-size:25px  margin-top: 150px;margin-bottom: 20px;margin-right: 150px;margin-left: 40px;">Update Receptionist Details</h3></u>
+
+<form method="post">
+{% csrf_token%}
+{{recp.as_p}}
+<h5 style="display:inline;padding:5px;margin:20px;">Receptionist Id</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{recp.ReceptionistId}}" name="ReceptionistId"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist Name</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{recp.ReceptionistName}}" name="ReceptionistName"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist Email</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{recp.ReceptionistEmail}}" name="ReceptionistEmail"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist Contact</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{recp.ReceptionistContact}}" name="ReceptionistContact"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist Address</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{recp.ReceptionistAddress}}" name="ReceptionistAddress"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist Gender</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{recp.ReceptionistGender}}" name="ReceptionistGender"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist Age</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{recp.ReceptionistAge}}" name="ReceptionistAge"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist salary</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{recp.Receptionistsalary}}" name="Receptionistsalary"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Receptionist password</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{recp.ReceptionistPassword}}" name="ReceptionistPassword"><br>
+<h5 style="display:inline;padding:5px;margin:20px"></h5><input class="btn btn-success" style="padding:10px;margin:10px;border-radius: 12px;" type="submit" value="submit">
+</form>
+</body>
+</html>

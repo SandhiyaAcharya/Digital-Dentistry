@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<br>
+<u><h3 style="font-family:verdana;font-size:25px  margin-top: 150px;margin-bottom: 20px;margin-right: 150px;margin-left: 40px;">Prescription</h3></u>
+{% for i in prescrip%}
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+       <h3 style="font-family:verdana;font-size:22px "> Prescription {{i.PrescriptionId}}</h3>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <h3 style="font-family:verdana;font-size:22px "><strong>{{i.date}}</strong></h3>
+        <h3 style="font-family:verdana;font-size:22px ">Patient Name : {{i.patient_name}}</h3>
+        <h3 style="font-family:verdana;font-size:22px ">Symptoms : {{i.symptoms}}</h3>
+        <h3 style="font-family:verdana;font-size:22px ">Discription : {{i.discription}}</h3>
+        <h3 style="font-family:verdana;font-size:22px ">Medicine : {{i.medicine}}</h3>
+        <h3 style="font-family:verdana;font-size:22px ">Treatement : {{i.treatement}}</h3>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</body>
+</html>
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+</head>
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<center>
+<br>
+<form  method="post" enctype="multipart/form-data">
+{% csrf_token%}
+<u><h3 style="font-family:verdana;font-size:25px">Signup</h3></u>
+<br>
+    {% csrf_token %}
+    <div style="font-family:verdana;font-size:20px">
+    {{Patient.as_p}}
+    <input style="background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;" type="submit" value="submit">
+    </div>
+</form>
+</center>
+</body>
+</html>

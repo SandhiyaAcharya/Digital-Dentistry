@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments</title>
+</head>
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<br>
+<u><h3 style="font-family:verdana;font-size:25px  margin-top: 150px;margin-bottom: 20px;margin-right: 150px;margin-left: 40px;">Your Appointments</h3></u>
+
+ {% if request.session.doctorId %}
+<table style=" margin-top: 10px;margin-bottom: 20px;margin-right: 80px;margin-left: 40px;">
+<tr style="margin:8px ;">
+<th style="padding:8px">Date</th>
+<th style="padding:8px">Time</th>
+<th style="padding:8px">Status</th>
+
+</tr>   
+<tr style="padding:10px">
+
+{% for i in apt%}
+
+<td style="padding:10px">{{i.date}}</td>
+<td style="padding:10px">{{i.time}}</td>
+<td style="padding:10px">{{i.status}}</td>
+
+{% endfor %}
+</tr>
+</table>
+{% endif %}
+
+
+{% if request.session.userId %}
+<table style=" margin-top: 10px;margin-bottom: 20px;margin-right: 80px;margin-left: 40px;">
+<tr style="margin:8px ;">
+<th style="padding:8px">Date</th>
+<th style="padding:8px">Time</th>
+<th style="padding:8px">Doctor_Name</th>
+</tr>   
+<tr style="padding:10px">
+{% for i in apt%}
+<td style="padding:10px">{{i.date}}</td>
+<td style="padding:10px">{{i.time}}</td>
+<td style="padding:10px">{{i.doctorname}}</td>
+{% endfor %}
+</tr>
+</table>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<br>
+<u><h3 style="font-family:verdana;font-size:25px  margin-top: 150px;margin-bottom: 20px;margin-right: 150px;margin-left: 40px;">Update Appointment Details</h3></u>
+
+<form method="post">
+{% csrf_token%}
+{{apt.as_p}}
+<h5 style="display:inline;padding:5px;margin:20px;">Appointment Date</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{apt.date}}" name="date"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Appointment Time</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{apt.time}}" name="time"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Appointment Status</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{apt.status}}" name="status"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Patient Id</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{apt.PatId}}" name="PatId"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor ID</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{apt.DoctId}}" name="DoctId"><br>
+<h5 style="display:inline;padding:5px;margin:20px"></h5><input class="btn btn-success" style="padding:10px;margin:10px;border-radius: 12px;" type="submit" value="submit">
+</form>
+</body>
+</html>

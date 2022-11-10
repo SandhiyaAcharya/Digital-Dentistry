@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>DigitalDentistry</title>
+  </head>
+  <body>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home/">DigitalDentistry</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home/">Home</a>
+        </li>
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contactus/">ContactUs</a>
+        </li>
+        
+        {% if request.session.userId or request.session.doctorId%}<!-- or  -->
+        <li class="nav-item">
+          <a class="nav-link" href="/dappointment/">Appointments</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/prescription/">Prescriptions</a>
+        </li>
+        {% endif %}
+
+        {% if  request.session.doctorId %}
+        <li class="nav-item">
+          <a class="nav-link" href="/addprescription/">AddPrescription</a>
+        </li>
+        {% endif %}
+        {% if request.session.userId%}
+        <li class="nav-item">
+          <a class="nav-link" href="/payment/">Payment</a>
+        </li>
+        {% endif %}
+        
+
+        {% if request.session.ReceptionistId %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Appointment
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/addappointment/">AddAppointment</a></li>
+            <li><a class="dropdown-item" href="/appointment/">Appointments</a></li>
+
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/details/">Details</a>
+        </li>
+
+        {% endif %}
+
+        {% if request.session.hrId %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Staff
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/adddoctor/">AddDoctor</a></li>
+            <li><a class="dropdown-item" href="/doctor/">Doctor</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/addreceptionist/">AddReceptionist</a></li>
+            <li><a class="dropdown-item" href="/receptionist/">Receptionist</a></li>
+          </ul>
+        </li>
+        {% endif %}
+
+        {% if request.session.userId or request.session.doctorId or request.session.ReceptionistId or request.session.hrId %}
+                <li>
+                    <a class="nav-link" href="/logout">Logout</a>
+        {% else %}
+                <li class="nav-item">
+          <a class="nav-link" href="/signup/">Register</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/login/">Login</a>
+        </li>
+        {% endif %}
+    </div>
+  </div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{%load static%}
+<html>
+<head>
+{% include 'base.html' %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+</style>
+</head>
+
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+<br>
+<center><h2>Payment</h2>
+<br>
+<img style="width:100px;height:80px" src="{%static 'images/tick.png'%}"  >
+<br>
+{% for i in ptnme %}
+<br>
+<h3 style="font-family:verdana;font-size:25px  ">{{i.patientName}}, Payment done Successfully...!</h3>
+
+</center>
+{%endfor%}
+</body>
+</html>

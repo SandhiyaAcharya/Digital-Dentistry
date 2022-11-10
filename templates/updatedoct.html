@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<br>
+<u><h3 style="font-family:verdana;font-size:25px  margin-top: 150px;margin-bottom: 20px;margin-right: 150px;margin-left: 40px;">Update Doctor Details</h3></u>
+
+<form method="post">
+{% csrf_token%}
+{{doct.as_p}}
+<h5 style="display:inline;padding:5px;margin:20px;">Doctor Id</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{doct.doctorId}}" name="doctorId"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor Name</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{doct.doctorName}}" name="doctorName"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor Email</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{doct.doctorEmail}}" name="doctorEmail"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor Contact</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{doct.doctorContact}}" name="doctorContact"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor Address</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{doct.doctorAddress}}" name="doctorAddress"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor Gender</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{doct.doctorGender}}" name="doctorGender"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor Age</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{doct.doctorAge}}" name="doctorAge"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor salary</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="number" value="{{doct.doctorsalary}}" name="doctorsalary"><br>
+<h5 style="display:inline;padding:5px;margin:20px">Doctor password</h5><input style="padding:5px;margin:10px;border: 2px solid #555;border-radius: 12px" type="text" value="{{doct.doctorPassword}}" name="doctorPassword"><br>
+<h5 style="display:inline;padding:5px;margin:20px"></h5><input class="btn btn-success" style="padding:10px;margin:10px;border-radius: 12px;" type="submit" value="submit">
+</form>
+</body>
+</html>

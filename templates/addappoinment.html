@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddAppointment</title>
+</head>
+
+<body style="background-image:url('/static/images/background.jpg');background-repeat:no-repeat;background-size:100%;">
+{% include 'base.html' %}
+<br>
+<center>
+<u><h3 style="font-family:verdana;font-size:25px ">Add Appointment</h3></u>
+</center>
+<br>
+<form method="post" enctype="multipart/form-data">
+<center>
+    {% csrf_token %}
+   <div style="font-family:verdana;font-size:15px;font-weight: 600; ">
+    {{Appoint.as_p}}
+    </div>
+    <input  class="btn btn-success" style="padding:10px;margin:10px;border-radius: 12px;" type="submit" value="submit">
+    </center>
+</form>
+</body>
+</html>
